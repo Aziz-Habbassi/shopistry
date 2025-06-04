@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopistry/services/all_categories.dart';
-import 'package:shopistry/services/all_products.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,12 +8,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          IconButton(
-            onPressed: () async {
-              await AllCategories().getAllCategories();
-            },
-            icon: Icon(Icons.search),
-          ),
+          IconButton(onPressed: () async {}, icon: Icon(Icons.search)),
         ],
       ),
     );
