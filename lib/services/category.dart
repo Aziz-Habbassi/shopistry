@@ -1,7 +1,7 @@
 import 'package:shopistry/helpers/api.dart';
 import 'package:shopistry/models/product_model.dart';
 
-class Category {
+class CategoryService {
   Future<List<ProductModel>> getCategory(String category) async {
     final List response = await Api().getmethod(
       "https://fakestoreapi.com/products/category/$category",

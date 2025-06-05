@@ -1,7 +1,7 @@
 import 'package:shopistry/helpers/api.dart';
 import 'package:shopistry/models/product_model.dart';
 
-class AddProduct {
+class AddProductService {
   Future<ProductModel> postproduct({
     required Map<String, dynamic> body,
     String? token,

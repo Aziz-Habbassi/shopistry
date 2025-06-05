@@ -18,9 +18,7 @@ class Api {
     final Response response = await Dio().post(
       url,
       data: body,
-      options: Options(
-        headers: token == null ? {} : {"Authorization": "Bearer ichbindusth"},
-      ),
+      options: Options(headers: token == null ? {} : {"Authorization": token}),
     );
     if (response.statusCode == 200) {
       return response.data;

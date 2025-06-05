@@ -1,7 +1,7 @@
 import 'package:shopistry/helpers/api.dart';
 import 'package:shopistry/models/product_model.dart';
 
-class Update {
+class UpdateService {
   Future<ProductModel> put({
     required int id,
     required Map<String, dynamic> body,
@@ -11,6 +11,7 @@ class Update {
       body,
     );
     final ProductModel productModel = ProductModel.fromJson(response);
+    print(productModel.title);
     return productModel;
   }
 }
