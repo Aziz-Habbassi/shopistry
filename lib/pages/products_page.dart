@@ -2,23 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:shopistry/services/all_products.dart';
+import 'package:shopistry/widgets/custom_app_bar.dart';
 import 'package:shopistry/widgets/product_widget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-  static String id = "HomePage";
+class ProductsPage extends StatelessWidget {
+  const ProductsPage({super.key});
+  static String id = "ProductsPage";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Shopistry", style: TextStyle(fontWeight: FontWeight.bold)),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(FontAwesomeIcons.cartShopping),
-          ),
-        ],
+      appBar: CustomAppBar(),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(child: Icon(Icons.shop_2, size: 64)),
+            ListTile(
+              onTap: () {
+                Navigator.popAndPushNamed(context, ProductsPage.id);
+              },
+              title: Text("Products"),
+              leading: Icon(FontAwesomeIcons.cartShopping),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.popAndPushNamed(context, ProductsPage.id);
+              },
+              title: Text("Categories"),
+              leading: Icon(FontAwesomeIcons.cartShopping),
+            ),
+          ],
+        ),
       ),
       body: FutureBuilder(
         future: AllProductsService().getAllProducts(),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopistry/pages/home_page.dart';
+import 'package:shopistry/pages/products_page.dart';
 import 'package:shopistry/pages/update_page.dart';
 
 void main() {
@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData.dark(),
       routes: {
-        HomePage.id: (context) => HomePage(),
+        ProductsPage.id: (context) => ProductsPage(),
         UpdatePage.id: (context) => UpdatePage(),
       },
-      initialRoute: HomePage.id,
+      initialRoute: ProductsPage.id,
       debugShowCheckedModeBanner: false,
     );
   }
