@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopistry/pages/categories_page.dart';
 import 'package:shopistry/pages/products_page.dart';
 import 'package:shopistry/pages/update_page.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         ProductsPage.id: (context) => ProductsPage(),
         UpdatePage.id: (context) => UpdatePage(),
+        CategoriesPage.id: (context) => CategoriesPage(),
       },
       initialRoute: ProductsPage.id,
       debugShowCheckedModeBanner: false,

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:shopistry/pages/categories_page.dart';
 import 'package:shopistry/services/all_products.dart';
 import 'package:shopistry/widgets/custom_app_bar.dart';
+import 'package:shopistry/widgets/loading_widget.dart';
 import 'package:shopistry/widgets/product_widget.dart';
 
 class ProductsPage extends StatelessWidget {
@@ -25,10 +27,10 @@ class ProductsPage extends StatelessWidget {
             ),
             ListTile(
               onTap: () {
-                Navigator.popAndPushNamed(context, ProductsPage.id);
+                Navigator.popAndPushNamed(context, CategoriesPage.id);
               },
               title: Text("Categories"),
-              leading: Icon(FontAwesomeIcons.cartShopping),
+              leading: Icon(FontAwesomeIcons.clipboard),
             ),
           ],
         ),
@@ -52,12 +54,7 @@ class ProductsPage extends StatelessWidget {
               },
             );
           } else {
-            return Center(
-              child: LoadingAnimationWidget.inkDrop(
-                color: Colors.deepPurple,
-                size: 120,
-              ),
-            );
+            return LoadingWidget();
           }
         },
       ),
