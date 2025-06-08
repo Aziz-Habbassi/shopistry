@@ -11,7 +11,6 @@ class UpdateService {
       body,
     );
     final ProductModel productModel = ProductModel.fromJson(response);
-    print(productModel.title);
     return productModel;
   }
 }

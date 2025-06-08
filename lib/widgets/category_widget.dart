@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopistry/pages/products_page.dart';
+import 'package:shopistry/services/category.dart';
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({super.key, required this.category});
@@ -6,6 +8,17 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProductsPage(
+              service: CategoryService().getCategory(category),
+              title: category,
+            ),
+          ),
+        );
+      },
       child: Container(
         decoration: BoxDecoration(
           color: Colors.deepPurple,

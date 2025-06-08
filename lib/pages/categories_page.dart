@@ -10,7 +10,7 @@ class CategoriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(title: "Categories"),
       body: FutureBuilder(
         future: AllCategoriesService().getAllCategories(),
         builder: (context, snapshot) {

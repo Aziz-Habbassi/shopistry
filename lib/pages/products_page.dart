@@ -1,42 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:shopistry/pages/categories_page.dart';
+import 'package:shopistry/models/product_model.dart';
 import 'package:shopistry/services/all_products.dart';
 import 'package:shopistry/widgets/custom_app_bar.dart';
+import 'package:shopistry/widgets/custom_drawer.dart';
 import 'package:shopistry/widgets/loading_widget.dart';
 import 'package:shopistry/widgets/product_widget.dart';
 
 class ProductsPage extends StatelessWidget {
-  const ProductsPage({super.key});
+  const ProductsPage({super.key, this.service, this.title = "Shopistry"});
   static String id = "ProductsPage";
+  final Future<List<ProductModel>>? service;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(child: Icon(Icons.shop_2, size: 64)),
-            ListTile(
-              onTap: () {
-                Navigator.popAndPushNamed(context, ProductsPage.id);
-              },
-              title: Text("Products"),
-              leading: Icon(FontAwesomeIcons.cartShopping),
-            ),
-            ListTile(
-              onTap: () {
-                Navigator.popAndPushNamed(context, CategoriesPage.id);
-              },
-              title: Text("Categories"),
-              leading: Icon(FontAwesomeIcons.clipboard),
-            ),
-          ],
-        ),
-      ),
+      appBar: CustomAppBar(title: title),
+      drawer: title == "Shopistry"
+          ? CustomDrawer()
+          : null /*so if the title = "Shopistry" means that you're in home screen else it will shows the go back arrow so it wont be many views up each other (better performance) */,
       body: FutureBuilder(
-        future: AllProductsService().getAllProducts(),
+        future: service ?? AllProductsService().getAllProducts(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return GridView.builder(
