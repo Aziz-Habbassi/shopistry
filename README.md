@@ -1,16 +1,49 @@
-# shopistry
+# 🛍️ Shopistry
 
-A new Flutter project.
+**Shopistry** is a modern, responsive Flutter e-commerce mobile app built for educational and prototyping purposes. It consumes the [FakeStoreAPI](https://fakestoreapi.com/) to showcase product listings, categories, and update functionalities — all wrapped in a smooth and minimalist UI.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 🔄 Fetch categories and filter products dynamically
+- 🛒 Display products with images, prices, and favorite toggle
+- ✏️ Update product information using a custom form UI
+- 📱 Fully responsive and dark-themed design
+- ⚡ Smooth loading indicators while fetching data
+- 🧭 Navigation drawer for seamless category browsing
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🧪 Technologies Used
+
+| Stack        | Description                          |
+|--------------|--------------------------------------|
+| **Flutter**  | Mobile SDK for building the UI       |
+| **Dart**     | Programming language                 |
+| **DIO**     | RESTful API calls via `dio` package |
+| **FakeStoreAPI** | Mock REST API for e-commerce      |
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the repo
+
+bash
+git clone https://github.com/Aziz-Habbassi/shopistry.git
+cd shopistry
+
+### 2.Install dependencies
+flutter pub get
+
+### 3.Run the app
+flutter run
+
+
+📄 License
+This project is for educational and personal use. Feel free to fork and build on top of it.
+
+👨‍💻 Author
+Developed by Aziz Habbassi – Flutter Developer
